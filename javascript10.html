@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demonstration of Invoking methods through Objects</title>
+	<script type="text/javascript">
+		function shape (length, breadth) {
+			this.length = length;
+			this.breadth = breadth;
+			this.calcPerim = perimeter;
+		}
+		
+		function perimeter () {
+			var result = 2 * (this.length + this.breadth);
+			return result;
+		}
+		
+		var square = new shape(5,5);
+		var rectangle = new shape(8,6);
+	
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write(square.length + "<br>");
+		document.write(rectangle.breadth + "<br>");
+		document.write(square.calcPerim() + "<br>");
+		document.write(rectangle.calcPerim() + "<br>");
+	
+	</script>
+
+</body>
+
+</html>

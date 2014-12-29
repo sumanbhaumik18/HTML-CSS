@@ -1,0 +1,61 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="header">
+			<img src="img/thumb.jpg" alt="Me myself and I Logo" />
+		</div>
+		<div id="navigation">
+			<ul id="nav">
+				<li><strong>Home</strong></li>
+				<li><a href="#">Articles</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Photos</a></li>
+				<li><a href="#">Clients</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			x = document.getElementById("nav");
+			y = document.getElementsByTagName("li");
+			o = x.childNodes;
+			z = document.getElementById('nav').getElementsByTagName('li')[3].firstChild;
+			p = document.getElementById('nav').getElementsByTagName('a')[2].firstChild;
+			alert(x);
+			alert(y.length);
+			alert(o.item(3));
+			alert(z.nodeType);
+			alert(z.nodeName);
+			alert(z.nodeValue);
+			alert(p.nodeType);
+			alert(p.nodeName);
+			alert(p.nodeValue);
+			p.nodeValue = "Visuals";  //Changing the nodeValue
+			alert(z.getAttribute("href")); // returns the attribute value
+			z.setAttribute("href", "photos.php"); // Sets new attribute value or change the existing one
+			z.setAttribute("target", "pop");
+			
+			x = document.getElementById('nav');
+			y = x.getElementsByTagName('li')[2];
+			x.removeChild(y);
+			
+			y = document.createElement('li');
+			x.appendChild(y);
+			
+			y = document.createElement('p');
+			y.appendChild( document.createTextNode("Menu :") );
+			x.parentNode.insertBefore(y,x);
+			
+			y = document.createElement('li');
+			y.appendChild(document.createTextNode("Adverts"));
+			x.replaceChild(y, x.lastChild);
+			
+			y = x.getElementsByTagName('li')[2];
+			z = y.cloneNode(true);
+			x.insertBefore(z,y);
+			
+		</script>
+	</body>
+</html>

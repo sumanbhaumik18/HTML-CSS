@@ -1,0 +1,16 @@
+
+
+h1{
+	font-size: 120px;
+	text-align: center;
+	margin-top: 50px;
+	font-family: 'Life Savers', cursive;
+	letter-spacing: -2px;
+	color: #888acd;
+	text-shadow:
+		3px -8px 7px orange;
+		4px -10px 0px red;
+		5px -12px 0px #b32081;
+		0px 2px 0px #ddd82c;
+	
+}

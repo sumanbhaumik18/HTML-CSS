@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function multiply () {
+        var number_one = document.the_form.field_one.value;
+        var number_two = document.the_form.field_two.value;
+        var result = number_one * number_two;
+        document.the_form.the_answer.value = result;
+        
+      }
+    </script>
+  </head>
+  <body>
+    <form name="the_form">
+      Number 1: <input type="text" name="field_one"><br />
+      Number 2: <input type="text" name="field_two"><br />
+      
+      The Product: <input type="text" name="the_answer"><br />
+      <a href="#" onClick="multiply(); return false;">Multiply Them!</a>
+      
+    </form>
+  </body>
+</html>

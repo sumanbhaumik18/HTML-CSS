@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Sales Report</title>
+    <link rel="stylesheet" href="books.css" />
+    <script>
+      var XMLHttpRequestObject = false;
+      function createRequest () {
+        if (window.XMLHttpRequest) {
+          XMLHttpRequestObject = new XMLHttpRequest ();
+        }
+        else if (window.ActiveXObject) {
+          XMLHttpRequestObject = new ActiveXObject ("Microsoft.XMLHTTP");
+        }
+      }
+      
+      function updatePage () {
+        var newTotal = XMLHttpRequestObject.responseText;
+        
+        var bookSoldElement = document.getElementById ("book-sold");
+        var cashElement = document.getElementById ("cash");
+        replaceText (bookSoldElement, newTotal);
+        
+      }
+      
+      function getBooksSold () {
+        createRequest ();
+        var url = "getUpdatedBookSales.jsp";
+        
+        XMLHttpRequestObject.open ("GET", url);
+        
+        XMLHttpRequestObject.onreadystatechange = updatePage();
+        XMLHttpRequestObject.send (null);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Sales Report for our Books</h1>
+    
+    <div id="Books">
+      <table border="2px">
+        <tr>
+          <th>Books Sold</th>
+          <td><span id="books-sold">555</span></td>
+        </tr>
+        <tr>
+          <th>Sell Price</th>
+          <td>Rs. <span id="price">300</span></td>
+        </tr>
+        <tr>
+          <th>Buying Cost</th>
+          <td>Rs. <span id="cost">250</span></td>
+        </tr>
+      </table>
+      
+      <h2>Profit Made: Rs. <span id="cash">27750</span></h2>
+      
+      <form action="getUpdatedBookSales.jsp" method="get">
+        <input type="button" value="Show me the latest profit" onClick="getBookSold()"/>
+      </form>
+      
+    </div>
+
+  </body>
+</html>

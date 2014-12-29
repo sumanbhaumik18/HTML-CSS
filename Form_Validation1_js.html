@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <script>
+      function checkMandatoryFields () {
+        var error_message = "";
+        
+        // Check Text Box
+        if (window.document.the_form.the_text.value == "") {
+          error_message += "Please enter your name.\n";
+        }
+        
+        // Check Scrolling List
+        if (window.document.the_form.state.selectedIndex < 0) {
+          error_message += "Please select a State.\n";
+        }
+        
+        // Check Radio Buttons
+        var radio_selected = false;
+        for (var i = 0; i < window.document.the_form.gender.length; i++) {
+          if (window.document.the_form.gender[i].checked) {
+            radio_selected = true;
+          }
+        }
+        if (radio_selected == false) {
+          error_message += "Please select a gender.\n";
+        }
+        
+        
+        if (error_message == "") {
+          alert ("The Form seems to be Correct.");
+          return true;
+        }
+        else {
+          error_message = "Please correct the following error:\n\n" + error_message;
+          alert (error_message);
+          return false;
+        }
+      } 
+    </script>
+  </head>
+  
+  <body bgColor = "lightblue">
+     
+     <h1>Please prove your details below</h1>
+     
+     <form action="" name="the_form" method="post" onSubmit = "var result=checkMandatoryFields (); return result;">
+       
+       <table border = "2" bgColor = "yellow">
+          <tr>
+            <td><b>Name:</b></td>
+            <td><input type="text" name = "the_text"></td>
+          </tr>
+          
+          <tr /><tr />
+          
+          <tr>
+            <td><b>State:</b></td>
+            <td>
+              <select name="state" id="" size = "5">
+                <option value="andhra">Andhra Pradesh</option>
+                <option value="bihar">Bihar</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="goa">Goa</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="mp">Madhya Pradesh</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="wb">West Bengal</option>
+              </select>
+            </td>
+          </tr>
+          
+          <tr /><tr />
+          
+          <tr>
+            <td><b>Gender:</b></td>
+            <td>
+              <input type="radio" name="gender">Female
+              <input type="radio" name="gender">Male
+            </td>
+          </tr>
+          
+          <tr /><tr />
+          
+          <tr>
+            <td><input type="submit" value="Submit Form"></td>
+          </tr>
+          
+          <tr /><tr />
+         
+         
+       </table>
+    </form>
+  </body>
+</html>

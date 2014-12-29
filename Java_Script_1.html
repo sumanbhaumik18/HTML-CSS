@@ -1,0 +1,31 @@
+<!doctype=html>
+<html>
+	<head>
+		<title>Prime Number Testing</title>
+		
+	</head>
+	<body>
+	
+		
+		<script>
+			function isPrime(r) {
+				num = parseInt(r);
+				if (num < 2) {return false;}
+				if (num != Math.round(num)) {return false;}
+				var result = true;
+				for(var i = 2; i <= Math.sqrt(num); i++) {
+					if (num % i == 0) {return false;}
+				}
+				return result;
+			}
+			var r = prompt("Enter a number to test for Prime: ");
+			var result = isPrime(r);
+			if (result == true) {alert("Prime Number");}
+			else {alert("Composite Number");}
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype = html>
+<html>
+	<head>
+		<title>Prime Number Checking</title>
+	</head>
+	<body>
+		<form action="">
+			<label for="">Enter a number to check for Prime: </label>
+			<input type="text" id="prime" />
+			<button onclick="isPrime()">Check</button>
+		</form>
+		<script>
+				function isPrime() {
+					var r = document.getElementById("prime").value;
+					num = parseInt(r);
+					var flag = true;
+					if (num < 2)
+						alert(num+" is Not Prime");
+					else {
+						for(var i = 2; i <= Math.sqrt(num); i++) {
+							if (num % i == 0) {
+								alert(num+" is Not Prime");
+								flag = false;
+								break;
+							}
+						}
+						if (flag == true)
+							alert(num+" is Prime");
+				  }
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>AJAX Example</title>
+    
+    <script>
+      var XMLHttpRequestObject = false;
+      if (window.XMLHttpRequest) {                   // Non-IE Browser
+        XMLHttpRequestObject = new XMLHttpRequest ();
+      }
+      else if (window.ActiveXObject) {              // IE Browser
+        XMLHttpRequestObject = new ActiveXObject ("Microsoft.XMLHTTP");
+      }
+      if (XMLHttpRequestObject) {
+        document.write ("<h1>Welcome to AJAX</h1>");
+      }
+      
+     // XMLHttpRequestObject.open("GET", "test.dat");  // -- XMLHttpRequest Object is sending a GET request to fetch a file names test.dat
+      
+    /* if (XMLHttpRequestObject.readyState == 4) &&    // -- Telling the object what to do when the request is answered from the server's side.
+                                                      // 
+         (XMLHttpRequestObject.status == 200) {
+            ------
+         } */
+      
+      
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

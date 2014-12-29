@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Demonstration Of JavaScript Objects</title>
+		<script type="text/javascript">
+			function person(name, age) {
+				this.name = name;
+				this.age = age;
+			}
+		</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var suman = new person("Suman Bhaumik", 22);
+		var amy = new person("Amelia Pond", 21);
+		document.write(amy.name);
+	</script>
+</body>
+</html>
